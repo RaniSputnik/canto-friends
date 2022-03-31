@@ -16,4 +16,8 @@ describe("textToTones", () => {
   test("ignores text with no numbers", () => {
     expect(textToTones("hello, world")).toEqual([]);
   });
+
+  test("ignores invalid tones", () => {
+    expect(textToTones("25 apples? So generous! do1 ze6")).toEqual([1, 6]);
+  });
 });
