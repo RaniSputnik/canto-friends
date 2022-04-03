@@ -10,33 +10,38 @@
 
 <main>
   <h1>Learn some Canto!</h1>
-  <div>
-    <img src="img/do-re-mi-fa-so.png" alt="Do-Re-Mi-Fa-So tone reference" />
+  <div id="tones">
+    <div>
+      <img src="img/do-re-mi-fa-so.png" alt="Do-Re-Mi-Fa-So tone reference" />
+    </div>
     {#each tones as tone}
-      <img src={toneToImageSrc(tone)} alt={`Tone ${tone}`} />
+      <div><img src={toneToImageSrc(tone)} alt={`Tone ${tone}`} /></div>
     {/each}
   </div>
   <input type="text" placeholder="Eg. nei5 hou2" on:input={updateText} />
 </main>
 
 <style>
+  #tones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
   main {
     text-align: center;
-    padding: 1em;
-    max-width: 240px;
     margin: 0 auto;
   }
 
   h1 {
     color: #ff3e00;
     text-transform: uppercase;
-    font-size: 4em;
+    font-size: 2rem;
     font-weight: 100;
-  }
-
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
   }
 </style>
